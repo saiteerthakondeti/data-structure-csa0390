@@ -1,0 +1,285 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset0 Times New Roman;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs28\lang9 1.write a c program to implement traverse operators:\par
+\par
+\fs22 #include <stdio.h>\par
+int main() \{\par
+    int arr[] = \{1, 2, 3, 4, 5\};\par
+    int size = sizeof(arr) / sizeof(arr[0]);\par
+    printf("Using index:\\n");\par
+    for (int i = 0; i < size; i++) \{\par
+        printf("%d ", arr[i]);\par
+    \}\par
+    printf("\\nUsing pointers:\\n");\par
+    int *ptr = arr;\par
+    for (int i = 0; i < size; i++) \{\par
+        printf("%d ", *(ptr + i));\par
+    \}\par
+    printf("\\nUsing pointer arithmetic:\\n");\par
+    for (int i = 0; i < size; i++) \{\par
+        printf("%d ", *ptr);\par
+        ptr++;\par
+    \}\par
+    return 0;\par
+\}\fs28\par
+2.C Program for Implementing Search Using Array\par
+\fs22\par
+#include <stdio.h>\par
+int main() \{\par
+    int arr[] = \{2, 4, 6, 8, 10\};\par
+    int n = sizeof(arr) / sizeof(arr[0]);\par
+    int target = 6;\par
+    int found = 0;\par
+    for (int i = 0; i < n; i++) \{\par
+        if (arr[i] == target) \{\par
+            found = 1;\par
+            break;\par
+   \}\}\par
+    if (found) \{\par
+        printf("Element found in the array.");\par
+    \} else \{\par
+        printf("Element not found in the array.");\par
+    \}\par
+    return 0;\par
+\}\par
+\f1\fs28 3. C program that demonstrates how to insert an element into an array:\par
+\par
+\fs22 #include <stdio.h>\par
+void insertElement(int arr[], int *n, int pos, int element) \{\par
+    if (pos < 0 || pos > *n) \{\par
+        printf("Invalid position to insert element.\\n");\par
+        return;\par
+    \}\par
+    for (int i = *n - 1; i >= pos; i--) \{\par
+        arr[i + 1] = arr[i];\par
+    \}\par
+    arr[pos] = element;\par
+    (*n)++;\par
+\}\par
+int main() \{\par
+    int arr[100] = \{2, 4, 6, 8, 10\};\par
+    int n = 5; \par
+    int pos = 2; \par
+    int element = 5; \par
+    printf("Array before insertion:\\n");\par
+    for (int i = 0; i < n; i++) \{\par
+        printf("%d ", arr[i]);\par
+    \}\par
+    printf("\\n");\par
+    insertElement(arr, &n, pos, element);\par
+    printf("Array after insertion:\\n");\par
+    for (int i = 0; i < n; i++) \{\par
+        printf("%d ", arr[i]);\par
+    \}\par
+    printf("\\n");\par
+    return 0;\par
+\}\par
+\fs28 4.write a c program  to delete elements using an array\par
+\par
+\fs24 #include <stdio.h>\par
+void deleteElement(int arr[], int *n, int pos) \{\par
+        if (pos < 0 || pos >= *n) \{\par
+        printf("Invalid position to delete element.\\n");\par
+        return;\par
+    \}\par
+    for (int i = pos; i < *n - 1; i++) \{\par
+        arr[i] = arr[i + 1];\par
+    \}\par
+    (*n)--;\par
+\}\par
+int main() \{\par
+    int arr[] = \{2, 4, 6, 8, 10\};\par
+    int n = 5; \par
+    int pos = 2;\par
+    printf("Array before deletion:\\n");\par
+    for (int i = 0; i < n; i++) \{\par
+        printf("%d ", arr[i]);\par
+    \}\par
+    printf("\\n");\par
+    deleteElement(arr, &n, pos);\par
+    printf("Array after deletion:\\n");\par
+    for (int i = 0; i < n; i++) \{\par
+        printf("%d ", arr[i]);\par
+    \}\fs22\par
+\fs24     printf("\\n");\par
+    return 0;\par
+\}\fs28\par
+\fs32 5\fs28 .write a c program to implement update operation\par
+\par
+#include <stdio.h>\par
+int main() \{\par
+    int num = 10;\par
+    printf("Original Value: %d\\n", num);\par
+    num = 20;\par
+    printf("Updated Value: %d\\n", num);\par
+    return 0;\par
+\}\par
+\fs32 6.write a recursive function to calculate the factorial of a number:\par
+\fs28\par
+#include <stdio.h>\par
+int factorial(int n) \{\par
+    if (n == 0) \{\par
+        return 1;\par
+    \} else \{\par
+        return n * factorial(n - 1);\par
+    \}\par
+\}\par
+int main() \{\par
+    int number = 5;\par
+    int result = factorial(number);\par
+    printf("Factorial of %d = %d", number, result);\par
+    return 0;\par
+\}\par
+\par
+\fs32 7.write a c program to find duplicate element in an array:\par
+\par
+\fs28 #include <stdio.h>\par
+int main() \{\par
+    int arr[] = \{1, 2, 3, 4, 2, 5, 6, 3\};\par
+    int size = sizeof(arr) / sizeof(arr[0]);\par
+    printf("Duplicate elements in the array are: ");\par
+    for (int i = 0; i < size; i++) \{\par
+        for (int j = i + 1; j < size; j++) \{\par
+            if (arr[i] == arr[j]) \{\par
+                printf("%d ", arr[j]);\par
+                break;\par
+            \}\par
+        \}\par
+    \}\par
+    return 0;\par
+\}\par
+\fs32\par
+\fs36 8.write a c program to find max and min from an array elements\fs28\par
+\f0\fs22 #include <stdio.h>\par
+\par
+int main() \{\par
+    int arr[] = \{10, 5, 8, 20, 15\};\par
+    int n = sizeof(arr) / sizeof(arr[0]);\par
+    int max = arr[0];\par
+    int min = arr[0];\par
+    for (int i = 1; i < n; i++) \{\par
+        if (arr[i] > max) \{\par
+            max = arr[i];\par
+        \}\par
+        if (arr[i] < min) \{\par
+            min = arr[i];\par
+        \}\par
+    \}\par
+    printf("Maximum element in the array: %d\\n", max);\par
+    printf("Minimum element in the array: %d\\n", min);\par
+    return 0;\par
+\}\par
+\fs28 9.\fs32 given a number n the task is to print the fibonacci series and the sum of the series using recursion \par
+input: n=10 \par
+output: fibonacci series\par
+0,1,1,2,3,5,8,13,21,34\par
+sum=88\par
+ \par
+\fs22 #include <stdio.h>\par
+int fibonacci(int n) \{\par
+    if (n <= 1)\par
+        return n;\par
+    return fibonacci(n - 1) + fibonacci(n - 2);\par
+\}\par
+int main() \{\par
+    int n = 10;\par
+    int sum = 0;\par
+    printf("Fibonacci Series:\\n");\par
+    for (int i = 0; i < n; i++) \{\par
+        printf("%d, ", fibonacci(i));\par
+        sum += fibonacci(i);\par
+\}\par
+    printf("\\nSum = %d\\n", sum);\par
+    return 0;\par
+\}\par
+\fs28 11.c program for binary search:\par
+\par
+\fs22 #include <stdio.h>\par
+int binarySearch(int arr[], int low, int high, int target) \{\par
+    while (low <= high) \{\par
+        int mid = low + (high - low) / 2;\par
+        if (arr[mid] == target) \{\par
+            return mid;\par
+        \}\par
+        else if (arr[mid] < target) \{\par
+            low = mid + 1;\par
+        \}\par
+        else \{\par
+            high = mid - 1;\par
+        \}\par
+    \}\par
+    return -1;\par
+\}\par
+int main() \{\par
+    int arr[] = \{2, 4, 6, 8, 10, 12, 14, 16, 18, 20\};\par
+    int n = sizeof(arr) / sizeof(arr[0]);\par
+    int target = 14;\par
+    int index = binarySearch(arr, 0, n - 1, target);\par
+    if (index != -1) \{\par
+        printf("Element found at index %d in the array.\\n", index);\par
+    \} else \{\par
+        printf("Element not found in the array.\\n");\par
+    \}\par
+    return 0;\par
+\}\par
+\fs28 12.write a program for linear search\par
+\par
+\fs22 #include <stdio.h>\par
+int linearSearch(int arr[], int n, int target) \{\par
+    for (int i = 0; i < n; i++) \{\par
+        if (arr[i] == target) \{        \}\par
+            return i;  \par
+    \}\par
+    return -1;  \par
+\}\par
+int main() \{\par
+    int arr[] = \{2, 4, 6, 8, 10\};\par
+    int n = sizeof(arr) / sizeof(arr[0]);\par
+    int target = 6;\par
+    int index = linearSearch(arr, n, target);\par
+    if (index != -1) \{\par
+        printf("Element found at index %d in the array.\\n", index);\par
+    \} else \{\par
+        printf("Element not found in the array.\\n");\par
+    \}\par
+    return 0;\par
+\}\fs28\par
+13.you are given  an array arr in incresing order find  the element x from arr using binary search\par
+example1:\par
+arr=\{1,5,6,7,9,10\}\par
+x=6\par
+output:element found at location 2\par
+\par
+#include <stdio.h>\par
+int binarySearch(int arr[], int n, int target) \{\par
+    int low = 0;\par
+    int high = n - 1;\par
+    int mid;\par
+    while (low <= high) \{\par
+        mid = low + (high - low) / 2;\par
+        if (arr[mid] == target) \{\par
+            return mid;  \par
+        \}\par
+        else if (arr[mid] < target) \{\par
+            low = mid + 1;\par
+        \}\par
+        else \{\par
+            high = mid - 1;\par
+        \}\par
+    \}\par
+    return -1;  \par
+\}\par
+int main() \{\par
+    int arr[] = \{1, 5, 6, 7, 9, 10\};\par
+    int n = sizeof(arr) / sizeof(arr[0]);\par
+    int target = 6;\par
+    int index = binarySearch(arr, n, target);\par
+    if (index != -1) \{\par
+        printf("Element found at location %d in the array.\\n", index + 1); // Index+1 to print location starting from 1\par
+    \} else \{\par
+        printf("Element not found in the array.\\n");\par
+    \}\par
+    return 0;\par
+\}\par
+}
+ 
